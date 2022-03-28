@@ -1,0 +1,20 @@
+{% extends "__base.html" %} {% block container %}
+<table class="table">
+  <tr>
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">Choice Text</th>
+        <th scope="col">Votes</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for choice in question.choice_set.all %}
+      <tr>
+        <td>{{choice.choice_text}}</td>
+        <td>{{choice.votes}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </tr>
+</table>
+ {% endblock %}

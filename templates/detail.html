@@ -1,0 +1,19 @@
+{% extends "__base.html" %}
+{% block container %}
+
+<div class="card">
+    <div class="card-header">
+        <h5 class="card-title">Questions Details </h5>
+    </div>
+    <div class="card-body">
+    <dl class="row">
+      <dt class="col-sm-3">Question</dt>
+      <dd class="col-sm-9">{{ question.question }}</dd>
+      <dt class="col-sm-3">Publication_date</dt>
+      <dd class="col-sm-9">{{ question.pub_date }}</dd>
+    </dl>
+
+    </div>
+</div>
+
+{% endblock %}

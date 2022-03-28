@@ -1,0 +1,42 @@
+{% extends "__base.html" %} {% block container %}
+<table class="table">
+  <tr>
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">Question</th>
+        <th scope="col">Publication_date</th>
+        <th scope="col">Question Data</th>
+        <th scope="col">Question Update</th>
+        <th scope="col">Create Choice</th>
+        <th scope="col">View All Choices</th>
+        <th scope="col">Delete Question</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for question in questions %}
+      <tr>
+        <td>{{question.question}}</td>
+        <td>{{question.pub_date}}</td>
+         <td>
+          <a href="{% url 'quest_detail' question.id %}"> Data</a>
+        </td>
+        <td>
+          <a href="{% url 'quest_update' question.id %}"> Update</a>
+        </td>
+        
+        <td>
+          <a href="{% url 'choice_create' question.id %}"> Create</a>
+        </td>
+        <td>
+          <a href="{% url 'list_choice' question.id %}"> View</a>
+        </td>
+        <td>
+          <a href="{% url 'quest_delete' question.id %}"> Delete</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </tr>
+</table>
+
+{% endblock %}
